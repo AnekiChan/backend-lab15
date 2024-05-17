@@ -1,0 +1,10 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@model AdminIndexModel
+@attribute [Authorize(Roles = "admin")]
+@{
+    ViewData["Title"] = "Админ панель";
+}
+
+<h2>Панель администратора</h2>
+<p>@Model.Message</p>

@@ -1,0 +1,23 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@model PostsIndexModel
+@{
+    ViewData["Title"] = "Посты";
+}
+
+<h2>Посты</h2>
+
+@if (Model.IsAdmin)
+{
+    <form method="post">
+        <input type="text" name="content" />
+        <button type="submit">Добавить пост</button>
+    </form>
+}
+
+<ul>
+    @foreach (var post in PostsIndexModel.Posts)
+    {
+        <li>@post</li>
+    }
+</ul>
